@@ -1,44 +1,185 @@
 ---
-// SVG icons inline
-const usersIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 text-blue-400 mb-3"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>`;
+// Datos de las características
+const features = [
+  {
+    title: "Comunidad",
+    description: "Conecta con desarrolladores apasionados por el código limpio",
+    icon: "👥"
+  },
+  {
+    title: "Eventos",
+    description: "Workshops, meetups y conferencias para compartir conocimiento",
+    icon: "📅"
+  },
+  {
+    title: "Recursos",
+    description: "Acceso a materiales educativos y mejores prácticas",
+    icon: "📚"
+  },
+  {
+    title: "Global",
+    description: "Conexiones con comunidades internacionales de desarrollo",
+    icon: "🌎"
+  }
+];
 
-const calendarIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 text-blue-400 mb-3"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>`;
+// Estadísticas
+const stats = [
+  { value: "1500+", label: "Miembros" },
+  { value: "48", label: "Eventos" },
+  { value: "12", label: "Proyectos" },
+  { value: "3", label: "Ciudades" }
+];
 
-const bookOpenIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 text-blue-400 mb-3"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>`;
-
-const globeIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 text-blue-400 mb-3"><circle cx="12" cy="12" r="10"></circle><line x1="2" x2="22" y1="12" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>`;
+// Imágenes para la galería
+const images = [
+  { src: "/img/foto1.jpg", alt: "Meetup de Clean Cod3" },
+  { src: "/img/foto1.jpg", alt: "Workshop de Clean Cod3" },
+  { src: "/img/foto1.jpg", alt: "Conferencia de Clean Cod3" },
+];
 ---
 
-<section id="about" class="bg-gray-900/50 py-16 md:py-24">
-  <div class="container mx-auto px-4 md:px-6">
-    <h2 class="text-3xl font-bold tracking-tight mb-8">Acerca de Clean Cod3</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-      <div class="space-y-4">
-        <p>
-          Clean Cod3 es una comunidad de programadores en Paraguay comprometidos con la escritura de código
+<section id="about" class="py-16 md:py-24 overflow-hidden relative">
+  <!-- Fondo con sutil patrón de código -->
+  <div class="absolute inset-0 -z-10">
+    <div class="absolute inset-0 bg-gradient-to-br from-slate-900 to-slate-950"></div>
+    <div class="absolute inset-0 opacity-10 bg-[url('/img/grid-pattern.svg')]"></div>
+    <div class="absolute right-4 md:right-8 bottom-4 md:bottom-8 text-slate-800/10 text-6xl md:text-9xl font-mono hidden md:block">{`}`}</div>
+  </div>
+  
+  <div class="container mx-auto px-4 max-w-6xl">
+    <!-- Encabezado mejorado -->
+    <div class="text-center mb-12 md:mb-20">
+      <span class="inline-block px-3 py-1 text-xs font-mono text-blue-400 bg-blue-900/30 rounded-full mb-3">CleanCod3.about()</span>
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">
+        Acerca de <span class="text-blue-500">Clean Cod3</span>
+      </h2>
+    </div>
+    
+    <!-- Contenido principal con responsive mejorado -->
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 md:gap-16 items-center">
+      <!-- Columna izquierda (información): Ocupa 3/5 en desktop -->
+      <div class="space-y-6 lg:col-span-3">
+        <p class="text-slate-300 leading-relaxed text-base md:text-lg">
+          Somos la comunidad de programadores más grande en Paraguay comprometidos con la escritura de código
           limpio, mantenible y eficiente. Nuestra misión es ayudar a los desarrolladores a crecer profesionalmente
           a través del intercambio de conocimientos y experiencias.
         </p>
-        <p>
+        
+        <p class="text-slate-300 leading-relaxed text-base md:text-lg">
           Fundada en 2021, nuestra comunidad ha ido creciendo constantemente y ahora cuenta con miembros de todas
           las áreas del desarrollo: frontend, backend, mobile, DevOps y más.
         </p>
-        <div class="flex flex-col sm:flex-row gap-4 pt-4">
-          <button class="inline-flex items-center justify-center rounded-md bg-gray-800 px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900">
-            Nuestra historia
-          </button>
-          <button class="inline-flex items-center justify-center rounded-md border border-gray-600 bg-transparent px-4 py-2 text-sm font-medium text-white shadow-sm transition-colors hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900">
-            Código de conducta
-          </button>
+        
+        <!-- Estadísticas - Responsive mejorado -->
+        <div class="mt-8 bg-slate-800/30 rounded-xl p-4 md:p-6 border border-slate-700/30">
+          <h4 class="text-sm font-semibold text-slate-400 mb-4 font-mono">// Nuestras cifras</h4>
+          <div class="flex flex-wrap justify-between">
+            {stats.map(stat => (
+              <div class="w-1/2 md:w-auto mb-4 md:mb-0">
+                <div class="flex items-center gap-3">
+                  <div class="w-1 h-10 bg-blue-500/50 rounded-full hidden md:block"></div>
+                  <div>
+                    <div class="text-xl md:text-2xl font-bold text-blue-400">{stat.value}</div>
+                    <div class="text-xs text-slate-500">{stat.label}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>       
-      <div class="grid grid-cols-5 grid-rows-5 gap-4">
-        <div class=" bg-amber-300 row-span-2">1</div>
-        <div class="bg-amber-300 row-span-2">2</div>
-        <div class="bg-amber-300 row-span-2 row-start-3">3</div>
-        <div class="bg-amber-300 row-span-2 row-start-3">4</div>
+        
+        <!-- Botones - Mejor disposición en móvil -->
+        <div class="flex flex-col sm:flex-row gap-3 mt-6">
+          <a href="#historia" class="px-5 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition-colors text-sm font-medium text-center sm:text-left">
+            Nuestra historia
+          </a>
+          <a href="#contacto" class="px-5 py-3 bg-slate-800 hover:bg-slate-700 text-white rounded-md border border-slate-700 transition-colors text-sm font-medium text-center sm:text-left">
+            Contáctanos
+          </a>
+        </div>
       </div>
+      
+      <!-- Columna derecha (galería): Ocupa 2/5 en desktop, oculta en móviles muy pequeños -->
+      <div class="lg:col-span-2 hidden sm:block">
+        <div class="relative">
+          <!-- Marco tipo terminal para la galería -->
+          <div class="absolute -inset-1 bg-slate-800/50 rounded-xl border border-slate-700/20 -z-10"></div>
+          <div class="absolute top-0 left-0 right-0 h-6 bg-slate-800 rounded-t-xl flex items-center ps-3 gap-1.5 -z-5">
+            <div class="w-2 h-2 bg-red-500/70 rounded-full"></div>
+            <div class="w-2 h-2 bg-yellow-500/70 rounded-full"></div>
+            <div class="w-2 h-2 bg-green-500/70 rounded-full"></div>
+          </div>
+          
+          <!-- Galería con mejor organización -->
+          <div class="grid grid-cols-2 gap-2 pt-8 p-2">
+            {images.map((img, index) => (
+              <div class={`overflow-hidden rounded-lg aspect-square ${index === 0 ? 'col-span-2 row-span-1 aspect-video' : ''}`}>
+                <img 
+                  src={img.src}
+                  alt={img.alt} 
+                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" 
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Sección "Qué hacemos" con mejor responsive -->
+    <div class="mt-16 md:mt-24">
+      <h3 class="text-xl md:text-2xl font-bold text-white text-center mb-8 md:mb-12">
+        <span class="text-blue-500 font-mono">function</span> quéHacemos<span class="text-blue-500 font-mono">()</span>
+      </h3>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+        {features.map(feature => (
+          <div class="bg-slate-800/30 backdrop-blur rounded-lg p-5 border border-slate-700/30 hover:border-blue-500/50 transition-all duration-300 hover:translate-y-[-2px] group">
+            <div class="text-2xl md:text-3xl mb-3 md:mb-4 opacity-90 group-hover:scale-110 transition-transform">{feature.icon}</div>
+            <h4 class="text-lg font-medium text-white mb-2">{feature.title}</h4>
+            <p class="text-slate-400 text-sm">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+    
+    <!-- CTA - Visible solo en pantallas medianas y grandes -->
+    <div class="mt-12 md:mt-16 text-center hidden md:block">
+      <a href="#unete" class="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition-all duration-300 font-medium group">
+        Únete a nuestra comunidad
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 group-hover:translate-x-1 transition-transform" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+        </svg>
+      </a>
+    </div>
+    
+    <!-- CTA flotante para móviles - Solo visible en pantallas pequeñas -->
+    <div class="fixed bottom-4 right-4 left-4 md:hidden z-50">
+      <a href="#unete" class="flex items-center justify-center gap-2 w-full py-3 bg-blue-600 text-white rounded-lg shadow-lg text-sm font-medium">
+        Únete a la comunidad
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+        </svg>
+      </a>
     </div>
   </div>
 </section>
 
+<style>
+  /* Añade un pequeño efecto de aparición al hacer scroll */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  #about {
+    animation: fadeInUp 0.8s ease-out;
+  }
+</style>
