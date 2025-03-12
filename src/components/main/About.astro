@@ -1,0 +1,44 @@
+---
+// SVG icons inline
+const usersIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 text-blue-400 mb-3"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>`;
+
+const calendarIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 text-blue-400 mb-3"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>`;
+
+const bookOpenIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 text-blue-400 mb-3"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>`;
+
+const globeIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8 text-blue-400 mb-3"><circle cx="12" cy="12" r="10"></circle><line x1="2" x2="22" y1="12" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>`;
+---
+
+<section id="about" class="bg-gray-900/50 py-16 md:py-24">
+  <div class="container mx-auto px-4 md:px-6">
+    <h2 class="text-3xl font-bold tracking-tight mb-8">Acerca de Clean Cod3</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div class="space-y-4">
+        <p>
+          Clean Cod3 es una comunidad de programadores en Paraguay comprometidos con la escritura de código
+          limpio, mantenible y eficiente. Nuestra misión es ayudar a los desarrolladores a crecer profesionalmente
+          a través del intercambio de conocimientos y experiencias.
+        </p>
+        <p>
+          Fundada en 2021, nuestra comunidad ha ido creciendo constantemente y ahora cuenta con miembros de todas
+          las áreas del desarrollo: frontend, backend, mobile, DevOps y más.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 pt-4">
+          <button class="inline-flex items-center justify-center rounded-md bg-gray-800 px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900">
+            Nuestra historia
+          </button>
+          <button class="inline-flex items-center justify-center rounded-md border border-gray-600 bg-transparent px-4 py-2 text-sm font-medium text-white shadow-sm transition-colors hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900">
+            Código de conducta
+          </button>
+        </div>
+      </div>       
+      <div class="grid grid-cols-5 grid-rows-5 gap-4">
+        <div class=" bg-amber-300 row-span-2">1</div>
+        <div class="bg-amber-300 row-span-2">2</div>
+        <div class="bg-amber-300 row-span-2 row-start-3">3</div>
+        <div class="bg-amber-300 row-span-2 row-start-3">4</div>
+      </div>
+    </div>
+  </div>
+</section>
+

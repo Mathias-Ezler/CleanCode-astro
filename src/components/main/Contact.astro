@@ -1,0 +1,75 @@
+---
+---
+
+<section id="contact" class="bg-gray-900/50 py-16 md:py-24">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl font-bold tracking-tight mb-4">¿Quieres formar parte de nuestra comunidad?</h2>
+          <p class="text-gray-400 mb-6">
+            Únete a Clean Cod3 y conecta con otros desarrolladores, participa en eventos y contribuye a proyectos
+            open source. Estamos siempre buscando nuevos miembros apasionados por el código limpio.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <button class="glow-button inline-flex items-center justify-center rounded-md bg-blue-600 px-6 py-3 text-base font-medium text-white shadow transition-colors hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900">
+              Unirse ahora
+            </button>
+            <button class="inline-flex items-center justify-center rounded-md border border-gray-600 bg-transparent px-6 py-3 text-base font-medium text-white shadow-sm transition-colors hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900">
+              Contáctanos
+            </button>
+          </div>
+        </div>
+        <div class="bg-gray-900/30 border border-gray-800 rounded-lg p-6">
+          <h3 class="text-xl font-medium mb-4">Suscríbete a nuestro newsletter</h3>
+          <p class="text-gray-400 mb-4">
+            Recibe actualizaciones sobre eventos, recursos y oportunidades para desarrolladores.
+          </p>
+          <div class="space-y-4">
+            <div class="grid w-full items-center gap-1.5">
+              <label for="email" class="text-sm font-medium">
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                placeholder="tu@email.com"
+                class="flex h-10 w-full rounded-md border border-gray-700 bg-gray-950 px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+              />
+            </div>
+            <button class="w-full inline-flex items-center justify-center rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900">
+              Suscribirse
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <style>
+    .glow-button {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .glow-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(59, 130, 246, 0.5);
+      filter: blur(20px);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: -1;
+      transform: scale(1.05);
+      border-radius: 8px;
+    }
+    
+    .glow-button:hover::before {
+      opacity: 1;
+    }
+  </style>
+  
+  

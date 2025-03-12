@@ -1,6 +1,7 @@
 ---
-import './src/styles/global.css';
-
+import "../styles/global.css";
+import Header from '../components/Organisms/Header.astro';
+import Footer from '../components/Organisms/Footer.astro';
 ---
 
 <!doctype html>
@@ -12,7 +13,9 @@ import './src/styles/global.css';
 		<title>Clean Cod3 comunity</title>
 	</head>
 	<body>
+		<Header />
 		<slot />
+		<Footer />
 	</body>
 </html>
 
@@ -21,6 +24,9 @@ import './src/styles/global.css';
 	body {
 		margin: 0;
 		width: 100%;
-		height: 100%;
-	}
+		height: 100%;		
+		background-color: #000000;
+ background-image: linear-gradient(to bottom, rgba(166, 0, 255, 0.5) 0%, rgba(0, 38, 255, 0.55) 100%), radial-gradient(at 50% 0%, rgba(255,255,255,0.10) 0%, rgba(0,0,0,0.50) 50%);
+ background-blend-mode: soft-light,screen;	 
+	 }
 </style>

@@ -1,0 +1,105 @@
+---
+// SVG icons inline
+const calendarIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>`;
+
+const clockIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mr-2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>`;
+
+const mapPinIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mr-2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>`;
+
+const calendarSmallIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mr-2"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>`;
+
+const arrowUpRightIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1.5 h-3.5 w-3.5"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg>`;
+
+const events = [
+  {
+    id: 1,
+    title: "Workshop: Clean Architecture en la práctica",
+    date: "15 de Julio, 2023",
+    time: "18:00 - 20:00",
+    location: "Asunción, Paraguay",
+    description: "Un taller práctico donde aprenderás a implementar Clean Architecture en tus proyectos.",
+    tags: ["Workshop", "Presencial"]
+  },
+  {
+    id: 2,
+    title: "Meetup: Testing y TDD",
+    date: "28 de Julio, 2023",
+    time: "19:00 - 21:00",
+    location: "Online (Zoom)",
+    description: "Descubre las mejores prácticas para implementar pruebas en tus aplicaciones siguiendo TDD.",
+    tags: ["Meetup", "Online"]
+  },
+  {
+    id: 3,
+    title: "Hackathon: Soluciones sostenibles",
+    date: "12-13 de Agosto, 2023",
+    time: "09:00 - 18:00",
+    location: "Ciudad del Este, Paraguay",
+    description: "Un fin de semana desarrollando soluciones innovadoras para problemas ambientales.",
+    tags: ["Hackathon", "Presencial"]
+  }
+];
+---
+
+<section id="events" class="py-16 md:py-24">
+  <div class="container mx-auto px-4 md:px-6">
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
+      <div>
+        <h2 class="text-3xl font-bold tracking-tight mb-2">Próximos Eventos</h2>
+        <p class="text-gray-400">Únete a nosotros en nuestros encuentros y talleres</p>
+      </div>
+      <button class="mt-4 md:mt-0 inline-flex items-center justify-center rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900">
+        Ver todos los eventos
+      </button>
+    </div>
+    
+    <div class="space-y-6">
+      {events.map((event, index) => (
+        <div class="relative">
+          {index !== events.length - 1 && (
+            <div class="absolute left-6 top-12 h-full w-px bg-gray-800" aria-hidden="true"></div>
+          )}
+          <div class="flex gap-4">
+            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-blue-500/10 text-blue-400">
+              <Fragment set:html={calendarIcon} />
+            </div>
+            <div class="flex-1 rounded-lg border border-gray-800 bg-gray-900/30 p-4 md:p-6">
+              <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-2">
+                <h3 class="font-medium">{event.title}</h3>
+                <div class="flex flex-wrap gap-2">
+                  {event.tags.map(tag => (
+                    <span class="inline-flex items-center rounded-full border border-gray-700 px-2.5 py-0.5 text-xs font-medium">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <p class="text-sm text-gray-400 mb-4">{event.description}</p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-4">
+                <div class="flex items-center text-sm text-gray-400">
+                  <Fragment set:html={calendarSmallIcon} />
+                  <span>{event.date}</span>
+                </div>
+                <div class="flex items-center text-sm text-gray-400">
+                  <Fragment set:html={clockIcon} />
+                  <span>{event.time}</span>
+                </div>
+                <div class="flex items-center text-sm text-gray-400">
+                  <Fragment set:html={mapPinIcon} />
+                  <span>{event.location}</span>
+                </div>
+              </div>
+              <div class="flex justify-end">
+                <button class="inline-flex items-center justify-center rounded-md border border-gray-600 bg-transparent px-3 py-1 text-xs font-medium text-white shadow-sm transition-colors hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900">
+                  Ver detalles
+                  <Fragment set:html={arrowUpRightIcon} />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+

@@ -1,0 +1,52 @@
+---
+const resources = [
+  {
+    type: "Tutorial",
+    title: "Introducción a Clean Architecture",
+    description: "Aprende los principios básicos de la arquitectura limpia y cómo implementarla en tus proyectos."
+  },
+  {
+    type: "Guía",
+    title: "Buenas prácticas en JavaScript",
+    description: "Descubre las mejores prácticas para escribir código JavaScript mantenible y eficiente."
+  },
+  {
+    type: "Webinar",
+    title: "Testing en aplicaciones React",
+    description: "Estrategias efectivas para implementar pruebas unitarias y de integración en aplicaciones React."
+  }
+];
+---
+
+<section id="resources" class="py-16 md:py-24">
+  <div class="container mx-auto px-4 md:px-6">
+    <h2 class="text-3xl font-bold tracking-tight mb-8">Recursos para Desarrolladores</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {resources.map(resource => (
+        <div class="bg-gray-900/30 border border-gray-800 rounded-lg overflow-hidden">
+          <div class="h-48 bg-gray-800"></div>
+          <div class="p-6">
+            <span class="text-xs font-medium bg-blue-500/10 text-blue-400 py-1 px-2 rounded-full">
+              {resource.type}
+            </span>
+            <h3 class="text-xl font-medium mt-3 mb-2">{resource.title}</h3>
+            <p class="text-gray-400 line-clamp-2">
+              {resource.description}
+            </p>
+            <button class="mt-2 text-blue-400 hover:text-blue-300 transition-colors inline-flex items-center">
+              {resource.type === "Webinar" ? "Ver grabación" : "Leer más"}
+            </button>
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <div class="flex justify-center mt-8">
+      <button class="inline-flex items-center justify-center rounded-md border border-gray-600 bg-transparent px-4 py-2 text-sm font-medium text-white shadow-sm transition-colors hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900">
+        Explorar todos los recursos
+      </button>
+    </div>
+  </div>
+</section>
+

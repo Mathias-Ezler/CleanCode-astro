@@ -1,0 +1,50 @@
+---
+// SVG icons inline
+const codeIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6 text-blue-400"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>`;
+---
+<!-- Encabezado fijo con fondo borroso y borde inferior -->
+<header class="border-b border-gray-800/40 bg-gray-950/95 backdrop-blur supports-[backdrop-filter]:bg-gray-950/60 sticky top-0 z-50">
+  <div class="container mx-auto flex h-22 items-center justify-between px-4 md:px-6">
+    
+    <!-- Logo e ícono SVG -->
+    <div class="flex items-center gap-2">
+      <Fragment set:html={codeIcon} />
+      <span class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">
+        Clean Cod3
+      </span>
+    </div>  
+
+   <!-- Menú de navegación (visible en pantallas medianas en adelante) -->
+<nav class="hidden lg:flex items-center gap-8 text-white text-lg font-semibold">
+  <a href="#about" class="hover:text-blue-400 transition-colors">Acerca de</a>
+  <a href="#events" class="hover:text-blue-400 transition-colors">Eventos</a>
+  <a href="#members" class="hover:text-blue-400 transition-colors">Miembros</a>
+  <a href="#resources" class="hover:text-blue-400 transition-colors">Recursos</a>
+  <a href="#contact" class="hover:text-blue-400 transition-colors">Contacto</a>
+</nav>
+
+<!-- Botón de acción con animación que redirige al enlace de WhatsApp -->
+<a href="https://chat.whatsapp.com/Frz57HuYoQYFR8GODWjIqG" target="_blank">
+  <button class="group/button relative inline-flex items-center justify-center overflow-hidden cursor-pointer rounded-2xl bg-blue-500/30 backdrop-blur-lg px-6 py-2 text-base font-semibold text-white transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl hover:shadow-blue-600/50 border border-white/20">
+    <span class="text-lg">Únete!</span>
+     <div class="absolute inset-0 flex h-full w-full justify-center [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000 group-hover/button:[transform:skew(-13deg)_translateX(100%)]">
+      <div class="relative h-full w-10 bg-white/30"></div>
+    </div>
+  </button>
+</a>
+
+  </div>
+</header>
+
+<script>
+  // Agrega una sombra al header cuando el usuario hace scroll
+  const header = document.querySelector('header');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 10) {
+      header?.classList.add('shadow-md');
+    } else {
+      header?.classList.remove('shadow-md');
+    }
+  });
+</script>
